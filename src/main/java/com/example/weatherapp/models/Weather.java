@@ -1,4 +1,25 @@
 package com.example.weatherapp.models;
 
-public class Weather {
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Getter
+@NoArgsConstructor
+@Entity
+public class Weather extends Timestamped{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(nullable = false)
+    private String city;
+
+    @Column(nullable = false)
+    private int highTemp;
+
+    @Column(nullable = false)
+    private int lowTemp;
+
 }
