@@ -22,4 +22,10 @@ public class Weather extends Timestamped{
     @Column(nullable = false)
     private int lowTemp;
 
+    public Weather(WeatherRequestDto requestDto) {
+        this.city = requestDto.getCity();
+        this.highTemp = requestDto.getHighTemp();
+        this.lowTemp = requestDto.getLowTemp();
+    }
+
 }
